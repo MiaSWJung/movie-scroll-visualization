@@ -39,7 +39,9 @@ async function makeChart() {
   //  - 선형척도를 사용
   //  - domain : [0, d3.max(data, d => d.value)]
   //  - range : [height - margin.bottom, margin.top] 
-  const yScale =
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.value)])
+    .range([height - margin.bottom, margin.top]);
 
 
   // 2. x 축 구현하기
