@@ -30,8 +30,9 @@ async function makeChart() {
   // 1. x 척도 구현하기
   //  - 시간척도(UTC)를 사용
   //  - domain : d3.extent(dates)
-  //  - range : [margin.left, width - margin.right] 
-  const xScale =
+  //  - range : [margin.left, width - margin.right]
+  const xScale = d3.extent(dates).range([margin.left, width - margin.right])
+  console.log(xScale)
 
 
   // 1. y 척도 구현하기
@@ -44,13 +45,13 @@ async function makeChart() {
   // 2. x 축 구현하기
   //  - 아래(Bottom)에 위치
   //  - xScale (x척도)
-  const xAxis = 
+  // const xAxis =
 
 
   // 2. y 축 구현하기
   //  - 왼쪽(Left)에 위치
   //  - yScale (y척도)
-  const yAxis =
+  // const yAxis =
 
 
   svg.append('g')
@@ -66,7 +67,7 @@ async function makeChart() {
   //  1) d3.line과 x, y메소드 구현
   //    - x {key}는 'date'
   //    - y {key}는 'value'
-  const line = 
+  // const line =
 
 
   //  2) svg에 path 요소와 속성 추가
