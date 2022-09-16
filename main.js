@@ -69,7 +69,9 @@ async function makeChart() {
   //  1) d3.line과 x, y메소드 구현
   //    - x {key}는 'date'
   //    - y {key}는 'value'
-  // const line =
+  const line = d3.line()
+    .x(d=> xScale(d.date))
+    .y(d=> yScale(d.value))
 
 
   //  2) svg에 path 요소와 속성 추가
@@ -79,7 +81,11 @@ async function makeChart() {
   //    - d 속성 : line 변수  
   //    - fill 속성 : 'none'
   //    - stroke 속성 : d3.schemeTableau10[0]
-  // svg.append(
+  svg.append('path')
+    .data([dataSet])
+    .attr('d', line)
+    .attr('fill', 'none')
+    .attr('stroke', d3.schemeTableau10[0])
 
     
 }
