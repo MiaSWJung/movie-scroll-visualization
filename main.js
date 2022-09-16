@@ -47,13 +47,13 @@ async function makeChart() {
   // 2. x 축 구현하기
   //  - 아래(Bottom)에 위치
   //  - xScale (x척도)
-  // const xAxis =
+  const xAxis = d3.axisBottom(xScale);
 
 
   // 2. y 축 구현하기
   //  - 왼쪽(Left)에 위치
   //  - yScale (y척도)
-  // const yAxis =
+  const yAxis = d3.axisLeft(yScale);
 
 
   svg.append('g')
@@ -79,7 +79,7 @@ async function makeChart() {
   //    - d 속성 : line 변수  
   //    - fill 속성 : 'none'
   //    - stroke 속성 : d3.schemeTableau10[0]
-  svg.append(
+  // svg.append(
 
     
 }
